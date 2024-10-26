@@ -1,0 +1,113 @@
+
+
+<div class="relative">
+    
+    <div >
+        <owl-carousel-o [options]="customOptions">
+            @for (item of sliderImages; track $index)
+            {
+                <ng-template carouselSlide>
+                    <img class="imgBackg" [src]="item">
+                  </ng-template>
+            }
+        </owl-carousel-o>
+    </div>
+
+     <!-- Overlay Layer -->
+     <div class="overlay absolute inset-0 bg-black bg-opacity-75"></div>
+
+    <!-- Content Above the Overlay -->
+    <div class="carsoulContent absolute inset-0 text-white flex items-center justify-center ">
+        <div class="text-center carsoulContent">
+        <h1 class="lg:text-4xl text-3xl font-bold mb-3 text-white">Welcome to Our Multi Store</h1>
+        <h2 class="text-xl text-white">Quality, Variety, and Great Deals Await</h2>
+        </div>
+    </div>
+    
+</div>
+
+<section class="categoryCarsoul mt-20 ms-5 mb-60">
+    <div class="flex flex-col md:flex-row justify-start items-center">
+        <h2 class="text-2xl font-semibold lg:me-10"> A Quick Look at Our Categories</h2>
+
+        <div>
+            <button
+            class="relative group transition-all duration-200 focus:overflow-visible w-max h-max p-2 overflow-hidden flex flex-row items-center justify-center bg-white gap-2 rounded-lg border border-zinc-200">
+            <span>
+              All Categories
+            </span>
+            <svg class="rotate-90 group-focus:rotate-180" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+              viewBox="0 0 24 24">
+              <path fill="currentColor"
+                d="m12 10.8l-3.9 3.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7l4.6-4.6q.3-.3.7-.3t.7.3l4.6 4.6q.275.275.275.7t-.275.7q-.275.275-.7.275t-.7-.275z" />
+            </svg>
+            <div
+              class="absolute shadow-lg -bottom-20 left-0 w-full h-max p-2 bg-white border border-zinc-200 rounded-lg flex flex-col gap-2">
+              <div class="absolute shadow-lg -bottom-40 left-0 w-full h-max p-2 bg-white border border-zinc-200 rounded-lg flex flex-col gap-2">
+                <span class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg">
+                  <p>Electronics</p>
+                </span>
+                <span class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg">
+                  <p>Jewelery</p>
+                </span>
+                <span class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg">
+                  <p>Men's Clothing</p>
+                </span>
+                <!-- New item added here -->
+                <span class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg">
+                  <p>Women's Clothing</p>
+                </span>
+              </div>
+              
+            </div>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="OurCards">
+
+    <div class="mx-auto my-5 w-3/4 md:w-full  h-min ">
+
+        <h2 class="text-2xl font-semibold mb-12 lg:ms-5"> Our Products : </h2>
+
+        <div class="col-span-full mb-10">
+            <div class="mt-2 p-3">
+              <input [(ngModel)]="searchName" type="text" placeholder="Search Here For Any Product....." class="block p-3 w-2/4 mx-auto rounded-md border-0 py-2.5 text-gray-700 shadow-sm ring-1 ring-gray-700 placeholder:text-gray-600 focus:ring-grey-600 sm:text-sm sm:leading-6">
+            </div>
+        </div>
+
+        <div class="container mx-auto flex flex-wrap justify-center lg:justify-start gap-y-5">
+                   
+            @for (item of allProducts | search : searchName; track $index)
+            {
+                    <!-- Card Component -->
+                        <div class="max-w-xs cursor-pointer bg-white border lg:ms-16 border-gray-200 rounded-lg shadow hover:shadow-xl hover:border-gray-300 w-full lg:w-1/3">
+                            <a >
+                                <div class="relative mx-3 mt-3 h-64 overflow-hidden rounded-lg bg-white text-gray-700">
+                                    <img class="cardImag w-full h-full object-fit-cover" [src]="item.image" alt="{{item.title}}" />
+                                </div>
+                            </a>
+                            <div class="p-4">
+                                <a >
+                                    <h5 class="mb-1 text-lg font-semibold text-gray-800 dark:text-white">{{item.title}}</h5>
+                                </a>
+                                <p class="text-lg font-bold mb-1 text-gray-700 ">
+                                    Price: <span class="font-normal">{{item.price}}</span>
+                                </p>
+                                <p class="text-lg font-bold text-gray-700 ">
+                                    Rate:
+                                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-2 py-0.5 rounded ms-2 ">
+                                        {{item.rating.rate}}
+                                    </span>
+                                </p>
+                               
+                            </div>
+                        </div>
+                        
+            }
+        </div>
+    </div>
+
+
+</section>
