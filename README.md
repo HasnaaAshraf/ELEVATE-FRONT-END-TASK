@@ -1,29 +1,25 @@
-# EcommProject
+# ELEVATE-FRONT-END-TASK
+This project is a dynamic e-commerce homepage designed to enhance the shopping experience. It features an image carousel, a category navigation dropdown, a search function, and responsive product cards.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## Multi Store (Dynamic E-Commerce Project)
+### Overview
+#### This project is a dynamic e-commerce homepage designed to enhance the shopping experience. It features an image carousel, a category navigation dropdown, a search function, and responsive product cards.
 
-## Development server
+### Approach
+#### Image Carousel: Implemented using Owl Carousel, which showcases product images and includes a welcoming overlay for users.
+#### Category Navigation: A button with a dropdown lets users quickly explore product categories, including Electronics, Jewelry, Men’s Clothing, and Women’s Clothing.
+#### Search Functionality: A real-time search bar enables users to find specific products by name, enhancing usability.
+#### Responsive Design: Utilized Flexbox for a clean, organized layout that works well on both desktop and mobile devices.
+### Challenges Faced
+#### Carousel Integration: Initially struggled with setting up the Owl Carousel, particularly with the configuration options. After consulting the documentation and examples, I was able to customize it to fit my needs.
+#### Responsive Layout: Ensuring the layout was consistently responsive across different screen sizes required extensive testing and adjustments to CSS styles.
+#### Search Functionality: Implementing a live search feature with filtering was challenging, but I overcame this by leveraging Angular's built-in functionalities.
+### Running the Application Locally
+### To run this application locally, follow these steps:
+### Clone the Repository:
+bash Copy code git clone cd Install Dependencies: Ensure you have Node.js installed, then run:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+bash Copy code npm install Start the Development Server:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
+bash Copy code ng serve Open in Browser: Navigate to http://localhost:4200 in your web browser to view the application
 
